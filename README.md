@@ -1,4 +1,4 @@
-# Mini_Android_Sqlite3_SQLTemplate
+# Android Sqlite3 SQLTemplate
 This is TINY SIMPLE yet another Sql template framework for android sqlite3 database accessing.
 
 ## Features:
