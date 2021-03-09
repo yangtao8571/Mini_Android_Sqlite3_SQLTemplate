@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqls>
+    <sql id="create_table_record">
+    create table if not exists record(
+         id integer primary key autoincrement,
+         name TEXT,
+         lineno TEXT,
+         station_no TEXT);
+    </sql>
+
+    <sql id="selectAll" >
+        select * from record
+    </sql>
+
+    <sql id="selectByCond" >
+        select * from record
+        where id = #{id}
+        and line_no = '#{lineno}'
+        and station_no = '#{pointno}'
+    </sql>
+</sqls>
