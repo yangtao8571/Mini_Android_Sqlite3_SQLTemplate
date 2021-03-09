@@ -1,10 +1,10 @@
-# Android Sqlite3 SQLTemplate
-This is TINY SIMPLE yet another Sql template framework for android sqlite3 database accessing.
+# Android Sqlite3 SQL Template
+This is a TINY SIMPLE sql template framework for android sqlite3 like Mybatis.
 
 ## Features:
-1. All sqls are written in sql.xml template files, no need write hard-code sql strings in java files.
+1. All sqls are written in sql.xml files.
 2. Auto inject parameter into sql template.
-3. Auto parsing sql, auto remove syntax-error sql clause.
+3. Auto correcting sql statment, parsing sql ast-tree instead of using template language.
 
 ## Example:
 // define sql.xml
@@ -38,10 +38,9 @@ and line_no = '10'
 
 ## Usage:
 ### STEP 1: 
-Define the sql.xml android project assets/ directory.
+Copy sql.xml to android project's assets/ directory.
 ### STEP 2: 
-Define XxxDao extends AbstractDAO class.
+Define XxxDao extends AbstractDAO class like SurveyDAO.
 ### STEP 3: 
 Instaniate XxxDao and use .selectByCond() method or other methods to excute sql.
 And cursor data will be auto converted to List of bean by java reflection.
-
