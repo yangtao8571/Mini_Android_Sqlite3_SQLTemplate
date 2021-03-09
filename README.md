@@ -37,7 +37,11 @@ and line_no = '10'
 '''
 
 ## Usage:
-### STEP 1: define the sql.xml
-### STEP 2: subclass the AbstractDAO class
-### STEP 3: use XxxDao.selectByCond() method to query sqlite3 database.
+### STEP 1: 
+Define the sql.xml android project assets/ directory.
+### STEP 2: 
+Define XxxDao extends AbstractDAO class.
+### STEP 3: 
+Instaniate XxxDao and use .selectByCond() method or other methods to excute sql.
+And cursor data will be auto converted to List of bean by java reflection.
 
