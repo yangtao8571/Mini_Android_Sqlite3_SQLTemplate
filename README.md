@@ -1,5 +1,5 @@
 # Android Sqlite3 SQL Template
-This is a TINY SIMPLE sql template framework for android sqlite3 like Mybatis.
+This is a TINY SIMPLE sql template library for android sqlite3 accessing like Mybatis.
 
 ## Features:
 1. All sqls are written in sql.xml files.
@@ -17,24 +17,23 @@ This is a TINY SIMPLE sql template framework for android sqlite3 like Mybatis.
     </sql>
 ```
 
-// query the "selectByCond" sql
+// query the "selectByCond" sql in java
 ```
-                SurveyDAO surveyDAO = new SurveyDAO(context);
-                Survey query = new Survey();
-                query.setId(1);
-                query.setLineno("10");
-                surveyDAO.withOpenDb(()->{
-                    List<Survey> surveys = surveyDAO.selectByCond(query);
-                    // do somethine meaningful here...
-                    
-                });
+    SurveyDAO surveyDAO = new SurveyDAO(context);
+    Survey query = new Survey(); // Survey is an entity class
+    query.setId(1);
+    query.setLineno("10");
+    surveyDAO.withOpenDb(()->{
+        List<Survey> surveys = surveyDAO.selectByCond(query);
+        // do somethine meaningful here...
+    });
 ```
-In this example, #{pointno} is null, and then the and condition will be dropped, so the final sql executed by sqlite3 will be:
-'''
+In this example, the query parameter #{pointno} is null, and then the "and station_no = '#{pointno}'" condition will be removed, so the final sql executed by sqlite3 will be:
+```
 select * from record
 where id = 1
 and line_no = '10'
-'''
+```
 
 ## Usage:
 ### STEP 1: 
